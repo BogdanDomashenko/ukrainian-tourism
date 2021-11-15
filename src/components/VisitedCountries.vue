@@ -36,8 +36,7 @@
                     </div>
                 </div>
                 <div class="row wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">
-                    <canvas id="visitedCountriesChart" width="100%" height="40"></canvas>
-                    <BarChart :chartdata="chartData" :options="chartOptions"/>
+                    <BarChart class="visitedCountriesChart"/>
             </div>
             </div>
             <div class="col-sm-5 section-img visited-countries-img wow animate__animated animate__backInRight" data-wow-delay="0.2s">
@@ -59,37 +58,13 @@ export default {
     },
     data () {
         return {
-              chartData: {
-    labels: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ],
-    datasets: [
-      {
-        label: 'Data One',
-        data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false
-  }
         }
-    }
+    },
 }
 </script>
 
 <style scoped>
-
+    .visitedCountriesChart {
+        margin-top: 20px;
+    }
 </style>
