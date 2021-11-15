@@ -1,0 +1,858 @@
+/* * {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+} */
+
+@import './bootstrap-grid.min.css';
+@import './normalize';
+@import './animate.min.css';
+@import './svgMap.min';
+@import 'https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css';
+
+body {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 58px;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    padding: 90px 0;
+    min-height: 85vh;
+}
+
+html, body { overflow-x:hidden; }
+div {
+    margin: 0;
+}
+
+.loaderDisable {
+    display: none;
+}
+
+.appLoader {
+    z-index: 1001;
+}
+
+
+.header {
+    background-image: url(../images/header/bg3.png); 
+    background-size: 100%;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Global */
+
+.header-text1 {
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 77px;
+    color: #fff;
+}
+
+.p-text1 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #FFF;
+}
+
+.btn1 {
+    cursor: pointer;
+    background: linear-gradient(94.18deg, #002D41 -2.67%, #060048 117.52%);
+    border-radius: 20px;
+    border: 0;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn1:hover {
+    background: #978df3;
+}
+
+
+.block-right {
+    margin-left: auto;
+}
+
+/* ------- NAVBAR -------- */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-items, .nav-categories {
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-items li, .nav-categories li {
+    display: inline;
+}
+
+.nav-upper{
+    padding: 20px 0;
+}
+
+.nav-upper-sticky {
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-item .nav-link{
+    font-family: 'Gilroy', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    color: #FFF;
+    padding-right: 20px;
+    transition: color 0.1s ease;
+}
+
+.nav-item .nav-link:hover {
+    color: #978df3;
+}
+
+.nav-item .nav-active {
+    color: #000;
+    font-weight: 500;
+}
+
+.nav-mobile {
+    display: none;
+}
+
+.nav-mobile-icon {
+    color: #fff;
+    font-size: 50px;
+}
+
+.nav-active {
+    display: block;
+}
+
+.sticky {
+    background: rgba(0, 0, 0, 0.58);
+    backdrop-filter: blur(78px);
+    -webkit-backdrop-filter: blur(78px);
+    z-index: 1000;
+  }
+
+
+/* header-info */
+
+
+.header-info {
+    padding-top: 150px;
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../images/header/manSaly.svg");
+    background-position: right 250px center;
+    background-size: 25%;
+    background-repeat: no-repeat;
+}
+
+.header-info-video {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* height: 100vh; */
+}
+
+.header-info-video-media {
+    min-width: 100%;
+    max-height: 100vh;
+    /* min-height: 100%; */
+    object-fit: cover;
+}
+
+
+.header-content {
+    z-index: 100;
+}
+
+.header-text {
+    margin-top: 30px;
+    max-width: 570px;
+}
+
+.block1 {
+    background: rgba(0, 0, 0, 0.27);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px); 
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
+.header-btn {
+    padding-top: 50px;
+}
+
+.p-header {
+    font-size: 20px;
+}
+
+.visited-countries {
+    background: url(../images/visited_countries/bg.png);
+    background-size: 100%;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+.h1 {
+    font-size: 48px;
+    max-width: 700px;
+    line-height: 58px;
+    font-weight: 600;
+}
+
+.line {
+    margin-top: 40px;
+    max-width: 192px;
+    width: 100%;
+    height: 4px;
+    border-radius: 39px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.line-blue {
+    background: linear-gradient(180deg, #E3EEFF 0%, #ABC3FF 100%);
+}
+
+.line-blue-grad {
+    background: linear-gradient(90deg, #1E1771 0%, #27114A 100%);
+}
+
+.line-white {
+    background: #fff;
+}
+
+.visited-countries-list {
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.visited-country-el {
+    display: flex;
+    align-items: center;
+}
+
+.visited-country-el:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+
+.marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+.marker-blue {
+    background: #80A3FF;
+}
+
+.marker-aqua {
+    background: #A4FFEF;
+}
+
+.marker-red {
+    background: #DB5B5B;
+}
+
+.marker-green {
+    background: #63F060;
+}
+
+.marker-purple {
+    background: #BA51DF;
+}
+
+.marker-yellow {
+    background: #E8D52A;
+}
+
+.marker-lightyellow {
+    background: #FFE0A4;
+}
+
+.visited-countries-img {
+    margin-top: -150px;
+}
+
+.section-img img {
+    width: 100%;
+}
+
+.internal-external {
+    color: #fff;
+    background: #000;
+}
+
+
+.internal-external-h1 {
+    background: linear-gradient(90deg, #1E1771 0%, #27114A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.int-ext {
+    display: flex;
+    justify-content: space-between;
+}
+
+.internal-external-img img {
+    width: 60%;
+}
+
+
+.internal-external-count {
+    font-style: normal;
+    font-weight: bold;
+    background: linear-gradient(90deg, #4436E3 0%, #6307F8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 96px;
+    line-height: 116px;
+    margin: 0 0px 20px 0;
+}
+
+.internal-external-count-extended {
+    
+
+    background: rgba(155, 155, 155, 0.15);
+    backdrop-filter: blur(200px);
+    border-radius: 10px;
+    max-width: 349px;
+    width: 100%;
+    padding: 20px;
+}
+
+
+.internal-external-count-extended-h2 {
+    margin: 0;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 83px;
+    color: #F8E581;
+}
+
+.internal-external-count-extended-p {
+    margin: 10px 0;
+    font-weight: normal;
+    font-size: 30px;
+    color: #fff;
+}
+
+.ukrainian-regions {
+    background: #000;
+    color: #fff;
+}
+
+.ukrainian-region {
+    background: url(../images/ukrainian-regions/Saly34.svg) no-repeat center;
+    background-size: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ukrainian-region-block {
+    background: rgba(79, 79, 79, 0.15);
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(200px); 
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.ukrainian-region-name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.map {
+    margin-top: 40px;
+    max-width: 100%;
+    width: 90%;
+}
+
+/* --------- MAP --------- */
+
+.ukraine-map {
+    position: relative;
+    text-align: center;
+}
+
+.ukraine-map_cont {
+    width: 100%;
+}
+
+.ukraine-map img {
+    vertical-align: middle;
+}
+
+.region-link path {
+    fill: #475BA4;
+    stroke-width: 0.5px;
+    stroke: #E8E8E8; 
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.region-link.notactive path {
+    fill: #303030;
+}
+
+.region-link:not(.notactive) path:hover {
+    fill: #344B78;    
+    transition: 0.3s;
+	  stroke: #fff; 
+}
+
+.region-point {
+    fill: #23324e ;
+    fill-opacity: 1;
+    stroke-width: 1;
+    stroke: #fff;
+    stroke-opacity: 1;
+    pointer-events: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.region-name {
+    pointer-events: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 10px;
+    font-weight: 500;
+    stroke-width: 0;
+    stroke-opacity: 1; 
+    stroke: none;
+    fill: #fff;
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+.region-name.notactive {
+  display: none
+}
+
+
+
+.region-name tspan {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/* -------- ./MAP ------ */
+
+
+.transport {
+    background: url(../images/transport/bg.png);
+    background-size: 100%;
+    background-size: cover;
+    color: #fff;
+}
+
+.transport-img img {
+    width: 90%;
+}
+
+.transport .line {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.chart-block {
+    max-width: 380px;
+}
+
+.transport-content {
+    width: 50%;
+}
+
+/* .transport-chart {
+    width: 100%;
+    height: 50px;
+    background: rgba(180, 192, 255, 0.45);
+    backdrop-filter: blur(20px);
+    border-radius: 119px 119px 70px 70px;
+} */
+
+.transport-chart {
+    width: 100%;
+}
+
+#transportChart2 {
+    float: right;
+}
+
+.foreigners {
+    background: #000;
+    color: #fff;
+}
+
+.employment {
+    background: url(../images/employment/bg.png);
+    background-size: 100%;
+    background-size: cover;
+    color: #fff;
+}
+
+
+.employment-block1 {
+    max-width: 400px;
+}
+
+.employment-block2 {
+    max-width: 50%;
+    text-align: end;
+    margin-left: auto;
+}
+
+.employment-block3 {
+    max-width: 440px;
+    margin-top: 20px;
+}
+
+.man-chart-img {
+    width: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.man-chart img {
+    padding: 0;
+    margin: 0;
+}
+
+.man-chart-img:not(:last-child) {
+    margin-right: 5px;
+}
+
+.man-chart-img-disable {
+    opacity: 0.5;
+}
+
+.man-chart-img-disable {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.investements {
+    background: #000;
+    color: #fff;
+}
+
+.investements-conut {
+    display: flex;
+    align-items: center;
+}
+
+.investements-conut-data {
+    font-size: 36px;
+}
+
+.investemts-chart {
+    display: flex;
+    padding-top: 40px;
+    height: 300px;
+}
+
+.investemts-chart-block {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.investemts-chart-pillar {
+    background: #fff;
+    width: 80px;
+}
+
+.investemts-chart-pillar:hover {
+    opacity: 0.7;
+}
+
+.investemts-chart-pillar:not(:last-child) {
+    margin-right: 20px;
+}
+
+.investemts-chart-block-count {
+    padding-bottom: 10px;
+}
+
+.investemts-chart-block-year {
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.investements-img {
+    width: 80%;
+}
+
+@media (max-width: 1650px) { 
+    .header-info {
+        background-position: right 150px center;
+    }
+ }
+
+ @media (max-width: 1500px) { 
+    .header-info {
+        background-position: right 90px center;
+    }
+    .visited-countries-img {
+        margin-top: -100px;
+    }
+ }
+
+ @media (max-width: 1200px) { 
+    .header-info {
+        background-position: right 60px center;
+    }
+    .visited-countries-img {
+        margin-top: -70px;
+    }
+    .internal-external-img img {
+        width: 90%;
+    }
+    .employment-block2 {
+        max-width: 65%;
+    }
+ }
+
+ @media (max-width: 1100px) { 
+    .header-info {
+        background-position: right 20px center;
+        background-size: 28%;
+    }
+ }
+
+ 
+ @media (max-width: 1050px) { 
+    .header-info {
+        background-position: right 10px center;
+        background-size: 28%;
+    }
+    .visited-countries-img {
+        margin-top: 0px;
+    }
+ }
+
+ @media (max-width: 991px) { 
+    .header-info {
+        background-position: right 10px center;
+        background-size: 32%;
+    }
+    .header-text {
+        max-width: 500px;
+    }
+    .nav-mobile {
+        display: inline-block;
+    }
+    .navMobileDisabled {
+        display: none;
+    }
+    .navMobileActive {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: absolute;
+        z-index: 1000;
+        background: linear-gradient(
+            94.18deg, #002D41 -2.67%, #060048 117.52%);
+        backdrop-filter: blur(78px);
+        padding: 20px;
+        border-radius: 10px;
+        transition: all .5s ease;
+        transform: translateY(0);
+    }
+    .navMobileActive li {
+        display: block;
+        flex-basis: 100%;
+    }
+    .navMobileActive li:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .nav-main {
+        display: block;
+    }
+    .internal-external-img img {
+        display: none;
+    }
+    .ukrainian-region { 
+        background: #000;
+        justify-content: center;
+    }
+    .ukrainian-region-block {
+        margin-top: 20px;
+        background: rgba(79, 79, 79, 0.35);
+    }
+    .employment-block2 {
+        max-width: 100%;
+    }
+ }
+
+ @media (max-width: 768px) { 
+    .header-info {
+        background-position: right 40px top 70px;
+        background-size: 22%;
+    }
+    .header-text {
+        max-width: 500px;
+    }
+    .visited-countries-img {
+        display: flex;
+        align-items: center;
+        margin-top: -100px;
+    }
+    .transport-content {
+        width: 90%;
+        margin-top: 40px;
+    }
+    .transport-img {
+        display: none;
+    }
+    .employment-block2 {
+        max-width: 50%;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .employment-block1 {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .employment-block3 {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+ }
+
+ @media (max-width: 672px) { 
+    .header-info {
+        background-position: right 10px top 80px;
+        background-size: 22%;
+    }
+    .header-text {
+        max-width: 500px;
+        font-size: 10px;
+    }
+    .header-text1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .p-header {
+        font-size: 18px;
+        line-height: normal;
+    }
+ }
+
+ @media (max-width: 576px) { 
+    .header-info {
+        background: none;
+    }
+    .header-text1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .visited-countries-img {
+        display: none;
+    }
+    .internal-external-count {
+        font-size: 64px;
+    }
+    .h1 {
+        font-size: 38px;
+        line-height: 40px;
+    }
+    .employment-block2 {
+        max-width: 75%;
+    }
+    .investements-img {
+        display: none;
+    }
+    .man-chart-img {
+        width: 11px;
+    }
+    .h1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+    .internal-external-count {
+        font-size: 48px;
+    }
+    .internal-external-count-extended-h2 {
+        font-size: 48px;
+        line-height: normal;
+    }
+    .internal-external-count-extended-p {
+        font-size: 28px;
+    }
+    .visited-countries-list {
+        font-size: 18px;
+    }
+    .visited-country-el:not(:last-child) {
+        margin-bottom: 5px;
+    }
+    .ukrainian-region-name {
+        font-size: 32px;
+    }
+    .ukrainian-region {
+        margin: 0 auto;
+    }
+    .ukrainian-region-block {
+        padding: 10px 20px;
+    }
+ }
