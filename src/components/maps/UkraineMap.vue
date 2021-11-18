@@ -283,14 +283,13 @@ export default {
             }
     },
     mounted() {
-        let regions = document.querySelectorAll('.region-link path');
+        let regions = document.querySelectorAll('.region-link');
         let maxCount = getMaxCount(this.cityData);
 
         for (let region of regions) {
             let currentRegionData = this.cityData.find(item => item.name == region.id);
             if (currentRegionData) {
-                console.log(currentRegionData)
-                region.style.opacity = currentRegionData.count / maxCount;
+                region.children[0].style.opacity = 0.15 + (currentRegionData.count / maxCount);
             }
         }
 
