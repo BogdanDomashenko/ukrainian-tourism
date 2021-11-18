@@ -291,6 +291,9 @@ export default {
             if (currentRegionData) {
                 region.children[0].style.opacity = 0.15 + (currentRegionData.count / maxCount);
             }
+            else {
+                region.children[0].style.fill = '#303030';
+            }
         }
 
         function getMaxCount(data) {
