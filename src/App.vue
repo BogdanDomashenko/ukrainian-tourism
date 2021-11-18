@@ -6,6 +6,7 @@
   <Transport/>
   <Foreigners/>
   <Employment/>
+  <Investements/>
 </template>
 
 <script>
@@ -16,7 +17,8 @@ import VisitedCountries from './components/VisitedCountries.vue'
 import UkrainianRegions from './components/UkrainianRegions.vue'
 import Transport from './components/Transport.vue'
 import Foreigners from './components/Foreigners.vue'
-import Employment from './components/Employment'
+import Employment from './components/Employment.vue'
+import Investements from './components/Investements.vue'
 
 import 'animate.css';
 import WOW from 'wowjs'
@@ -30,7 +32,8 @@ export default {
     UkrainianRegions,
     Transport,
     Foreigners,
-    Employment
+    Employment,
+    Investements
   },
   mounted() {
     new WOW.WOW().init();

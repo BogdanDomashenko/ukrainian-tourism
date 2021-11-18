@@ -28,6 +28,9 @@
                     <li class="nav-item">
                         <a href="#" v-scroll-to="'#employment'" class="nav-link">Зайнятість</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" v-scroll-to="'#investements'" class="nav-link">Інвестиції</a>
+                    </li>
                 </ul>
             </div>
         </div>
