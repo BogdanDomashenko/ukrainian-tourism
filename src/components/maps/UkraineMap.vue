@@ -261,7 +261,6 @@
         <text class="region-name" x="0" y="0" style="transform: matrix(1,0,0,1,99,196);">
             <tspan>Івано-Франківськ</tspan>
         </text>
-
     </svg>
 </div>
 </template>
@@ -270,7 +269,7 @@
 export default {
     name: 'UkraineMap',
     props: {
-
+        regionsData: Array
     },
     data() {
         return {
@@ -284,26 +283,31 @@ export default {
     },
     mounted() {
         let regions = document.querySelectorAll('.region-link');
-        let maxCount = getMaxCount(this.cityData);
+        let maxCount = getMaxCount(this.regionsData);
 
         for (let region of regions) {
-            let currentRegionData = this.cityData.find(item => item.name == region.id);
+            let currentRegionData = this.regionsData.find(item => item.name == region.id);
             if (currentRegionData) {
-                region.children[0].style.opacity = 0.15 + (currentRegionData.count / maxCount);
+                region.children[0].style.opacity = ((currentRegionData.visitors+10000) / (maxCount / 50));
             }
             else {
                 region.children[0].style.fill = '#303030';
             }
+
+            region.addEventListener('click', function(e){
+                console.log(this.children[0].id);
+                e.preventDefault();
+            })
         }
 
         function getMaxCount(data) {
             let maxItem = 0;
             for (let item of data) {
-                if (item.count > maxItem) {
-                    maxItem = item.count;
+                if (item.visitors > maxItem) {
+                    maxItem = item.visitors;
                 }
             }
-
+            console.log(maxItem);
             return maxItem;
         }
     },

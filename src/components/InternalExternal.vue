@@ -1,5 +1,5 @@
 <template>
-  <section class="internal-external section" id="internal-external">
+  <section class="internal-external section" id="internal-external" v-if="internalExternal[0]">
     <div class="container">
         <div class="row int-ext">
             <div class="col-lg-4 internal-external-img  wow animate__animated animate__fadeInLeft" data-wow-delay="0.2s">
@@ -10,8 +10,7 @@
                     <div class="line line-white line-break"></div>
                     <div class="row">
                         <div class="internal-external-count wow animate__animated animate__fadeInRight" data-wow-delay="0.4s" id="#internal-external-count">
-                            <!-- 1 957 410 -->
-                            {{saparateNumber(info['внутрішні']+info['виїздні'])}}
+                            {{saparateNumber(internalExternal[0].external+internalExternal[0].internal)}}
                         </div>
                     </div>
                     <div class="row">
@@ -20,10 +19,12 @@
                                 З них
                             </h2>
                             <p class="internal-external-count-extended-p">
-                                {{saparateNumber(info['виїздні'])}} виіздних
+                                 {{saparateNumber(internalExternal[0].external)}} виіздних
+                                  <!--5 980 203 виіздних  -->
                             </p>
                             <p class="internal-external-count-extended-p">
-                                {{saparateNumber(info['внутрішні'])}} внутрішніх
+                                 {{saparateNumber(internalExternal[0].internal)}} внутрішніх
+                                 <!-- 6 378 929 внутрішніх -->
                             </p>
                         </div>
                     </div>
@@ -34,21 +35,31 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from 'vuex'
+
 export default {
   name: 'InternalExternal',
     data: function() {
       return {
-        info: {'внутрішні': 122, 'виїздні': 12}
+          
       }
   },
-    async mounted() {
-        // this.info = await request('/api/internalExternal/');
-    },
     methods: {
+        ...mapActions([
+            'getInternalExternalFromAPI'
+        ]),
         saparateNumber: function(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
           }
-    }
+    },
+    computed: {
+        ...mapGetters([
+            'internalExternal'
+        ])
+    },
+    mounted() {
+       this.getInternalExternalFromAPI();   
+    },
 }
 </script>
 

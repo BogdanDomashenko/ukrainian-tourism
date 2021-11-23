@@ -1,5 +1,5 @@
 <template>
-    <section class="ukrainian-regions section" id="regions">
+    <section class="ukrainian-regions section" id="regions" v-if="regions.length>0">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
@@ -8,7 +8,7 @@
                     </div>
                     <div class="line line-blue"></div>
                     <div class="row">
-                        <UkraineMap />
+                        <UkraineMap :regionsData="regions"/>
                     </div>
                 </div>
                 <div class="col-lg-5 col-10 ukrainian-region wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
@@ -24,6 +24,7 @@
 
 <script>
 import UkraineMap from './maps/UkraineMap'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
     name: 'UkrainianRegions',
@@ -34,6 +35,19 @@ export default {
         return {
             
         }
+    },
+    methods: {
+        ...mapActions([
+            'getRegionsFromAPI'
+        ]),
+    },
+    computed: {
+        ...mapGetters([
+            'regions'
+        ]),
+    },
+    mounted() {
+        this.getRegionsFromAPI();
     }
 }
 </script>
