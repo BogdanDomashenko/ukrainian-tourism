@@ -7,12 +7,14 @@ export const store = createStore({
     state: {
         internalExternalData: [],
         coutriesData: [],
-        regionsData: []
+        regionsData: [],
+        transportData: []
     },
     mutations: {
         setInternalExternal: (state, internalExternalData) => state.internalExternalData = internalExternalData,
         setCountriesData: (state, coutriesData) => state.coutriesData = coutriesData,
         setRegionsData: (state, regionsData) => state.regionsData = regionsData,
+        setTransportData: (state, transportData) => state.transportData = transportData,
     },
     getters: {
         internalExternal (state) {
@@ -24,6 +26,9 @@ export const store = createStore({
         regions (state) {
             return state.regionsData;
         },
+        transport (state) {
+            return state.transportData;
+        }
     },
     actions: {
         getInternalExternalFromAPI(context) {
@@ -48,6 +53,15 @@ export const store = createStore({
             return axios.get(`${server}/ukrainian-regions`)
             .then((response) => {
                 context.commit('setRegionsData', response.data)
+            }).catch((error) => {
+                console.log(error);
+                return error;
+            });
+        },
+        getTransportFromAPI(context) {
+            return axios.get(`${server}/transports`)
+            .then((response) => {
+                context.commit('setTransportData', response.data)
             }).catch((error) => {
                 console.log(error);
                 return error;

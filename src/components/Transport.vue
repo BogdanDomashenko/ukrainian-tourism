@@ -1,5 +1,5 @@
 <template>
-    <section class="transport section" id="transport">
+    <section class="transport section" id="transport" v-if="transport.length>0">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -21,6 +21,8 @@
 <script>
 import TransportChart from './charts/TransportChart.vue'
 
+import {mapActions, mapGetters} from 'vuex'
+
 export default {
     name: 'Transport',
     components: {
@@ -28,13 +30,29 @@ export default {
     },
     data() {
         return {
-            transport: { 
-                automobile: 124,
-                train: 155,
-                avia: { international: 90, domestic: 10 },
-                water: { river: 88, sea: 12 }
-            }
+            // transport: { 
+            //     automobile: 124,
+            //     train: 155,
+            //     avia: { international: 90, domestic: 10 },
+            //     water: { river: 88, sea: 12 }
+            // }
         }
+    },
+    methods: {
+        ...mapActions([
+            'getTransportFromAPI'
+        ])
+    },
+    computed: {
+        ...mapGetters([
+            'transport'
+        ])
+    },
+    mounted() {
+        this.getTransportFromAPI().then(() => {
+            console.log(this.transport)
+        });
+        
     }
 }
 </script>

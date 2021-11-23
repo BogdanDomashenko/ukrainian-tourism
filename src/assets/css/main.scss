@@ -457,7 +457,8 @@ div {
 .region-link:not(.notactive) path:hover {
     fill: #344B78;    
     transition: 0.3s;
-	  stroke: #fff; 
+	stroke: #fff;
+    stroke-width: 1px; 
 }
 
 .region-point {

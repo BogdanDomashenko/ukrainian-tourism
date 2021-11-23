@@ -9,7 +9,7 @@
         <g mask="url(#mask0_167:234)">
         <rect x="475.625" y="351.625" width="130" height="130" fill="#00183D"/>
         </g>
-        <text fill="#00183D" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="492.875" y="352.356"> {{ transportData.train }} </tspan></text>
+        <text fill="#00183D" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="505.875" y="352.356"> {{ trensport.train }} </tspan></text>
         <g filter="url(#filter1_d_167:234)">
         <rect x="420" y="498" width="240" height="55" rx="27.5" fill="#4C4B80"/>
         </g>
@@ -23,7 +23,7 @@
         <g mask="url(#mask1_167:234)">
         <rect x="200" y="110" width="130" height="130" fill="#00183D"/>
         </g>
-        <text fill="#00183D" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="217.469" y="109.356">{{transportData.automobile}}</tspan></text>
+        <text fill="#00183D" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="64" font-weight="bold" letter-spacing="0em"><tspan x="183.469" y="109.356">{{trensport.automobile}}</tspan></text>
         <g filter="url(#filter3_d_167:234)">
         <rect x="110" y="255" width="310" height="53" rx="26.5" fill="#5B5A98"/>
         </g>
@@ -41,7 +41,7 @@
         <rect x="220" y="708" width="180" height="41" rx="20.5" fill="#4C4B80"/>
         </g>
         <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="28" letter-spacing="0em"><tspan x="239.918" y="736.52">&#x410;&#x432;&#x456;&#x430;&#x446;&#x456;&#x439;&#x43d;&#x438;&#x439;</tspan></text>
-        <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="24" letter-spacing="0em"><tspan x="72.2812" y="799.16">{{ round(transportData.avia.international/(transportData.avia.domestic + transportData.avia.international)*100) }}% - &#x43c;&#x456;&#x436;&#x43d;&#x430;&#x440;&#x43e;&#x434;&#x43d;&#x456; &#x43f;&#x435;&#x440;&#x435;&#x432;&#x435;&#x437;&#x435;&#x43d;&#x43d;&#x44f;&#10;</tspan><tspan x="249.469" y="825.16">{{ round(transportData.avia.domestic/(transportData.avia.domestic + transportData.avia.international)*100) }}% - &#x432;&#x43d;&#x443;&#x442;&#x440;&#x456;&#x448;&#x43d;&#x456;</tspan></text>
+        <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="24" letter-spacing="0em"><tspan x="150.2812" y="799.16">{{ round(trensport.avia.international/(trensport.avia.domestic + trensport.avia.international)*100) }}% - &#x43c;&#x456;&#x436;&#x43d;&#x430;&#x440;&#x43e;&#x434;&#x43d;&#x456; &#x43f;&#x435;&#x440;&#x435;&#x432;&#x435;&#x437;&#x435;&#x43d;&#x43d;&#x44f;&#10;</tspan><tspan x="149.469" y="825.16">{{ round(trensport.avia.domestic/(trensport.avia.domestic + trensport.avia.international)*100) }}% - &#x432;&#x43d;&#x443;&#x442;&#x440;&#x456;&#x448;&#x43d;&#x456;</tspan></text>
         <g filter="url(#filter6_bd_167:234)">
         <path d="M530 684C530 639.817 565.817 604 610 604H670C714.183 604 750 639.817 750 684V771C750 793.091 732.091 811 710 811H570C547.909 811 530 793.091 530 771V684Z" fill="#A8B4EF" fill-opacity="0.45" shape-rendering="crispEdges"/>
         </g>
@@ -55,7 +55,7 @@
         <rect x="550" y="748" width="180" height="41" rx="20.5" fill="#4C4B80"/>
         </g>
         <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="28" letter-spacing="0em"><tspan x="591.342" y="776.52">&#x412;&#x43e;&#x434;&#x43d;&#x438;&#x439;</tspan></text>
-        <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="24" letter-spacing="0em"><tspan x="580.68" y="840.16">{{ round(transportData.water.river/(transportData.water.river + transportData.water.sea)*100) }}%  - &#x440;&#x456;&#x447;&#x43a;&#x43e;&#x432;&#x438;&#x439;&#10;</tspan><tspan x="574.82" y="866.16">{{ round(transportData.water.sea/(transportData.water.river + transportData.water.sea)*100) }}% - &#x43c;&#x43e;&#x440;&#x441;&#x44c;&#x43a;&#x438;&#x439;</tspan></text>
+        <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="24" letter-spacing="0em"><tspan x="580.68" y="840.16">{{ round(trensport.water.river/(trensport.water.river + trensport.water.sea)*100) }}%  - &#x440;&#x456;&#x447;&#x43a;&#x43e;&#x432;&#x438;&#x439;&#10;</tspan><tspan x="574.82" y="866.16">{{ round(trensport.water.sea/(trensport.water.river + trensport.water.sea)*100) }}% - &#x43c;&#x43e;&#x440;&#x441;&#x44c;&#x43a;&#x438;&#x439;</tspan></text>
         <defs>
         <filter id="filter0_b_167:234" x="310" y="202" width="460" height="453" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feFlood flood-opacity="0" result="BackgroundImageFix"/>
@@ -154,17 +154,35 @@
 export default {
     name: 'TransportChart',
     props: {
-        transportData: { 
-            automobile: Number,
-            train: Number,
-            avia: { international: Number, domestic: Number },
-            water: { river: Number, sea: Number }
-            }
+        transportData: Object
+    },
+    data () {
+        return {
+        }
     },
     methods: {
         round: function(value) {
             return value.toFixed(0);
         }
     },
+    mounted() {
+        // this.transport = { 
+        //         automobile: this.transportData[0].count,
+        //         train: this.transportData[1].count,
+        //         avia: this.transportData[3].count,
+        //         water: this.transportData[2].count
+        //     }
+
+    },
+    computed: {
+        trensport: function() {
+            return { 
+                automobile: Math.round(this.transportData[0].count/1000000),
+                train: Math.round(this.transportData[1].count/1000000),
+                avia: this.transportData[3].count,
+                water: this.transportData[2].count
+            }
+        }
+    }
 } 
 </script>

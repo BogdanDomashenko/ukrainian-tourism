@@ -11,6 +11,7 @@
 
 <script>
 import WorldMap from './maps/WorldMap.vue'
+import { getName } from 'country-list'
 
 export default {
     components: {
@@ -41,6 +42,9 @@ export default {
                 }
         }
         }
+    },
+    mounted () {
+        console.log(getName('AF'));
     }
 }
 </script>

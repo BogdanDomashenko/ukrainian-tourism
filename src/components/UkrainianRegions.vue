@@ -8,13 +8,13 @@
                     </div>
                     <div class="line line-blue"></div>
                     <div class="row">
-                        <UkraineMap :regionsData="regions"/>
+                        <UkraineMap :regionsData="regions" @clicked="setCity"/>
                     </div>
                 </div>
                 <div class="col-lg-5 col-10 ukrainian-region wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
-                        <div class="ukrainian-region-block wow animate__animated animate__fadeIn" data-wow-delay="0.8s">
-                            <h2 class="ukrainian-region-name">Харківська обл.</h2>
-                            <p class="ukrainian-region-count">Кількість туристів за рік: 4230</p>
+                        <div class="ukrainian-region-block wow animate__animated animate__fadeIn" data-wow-delay="0.8s" v-if="currentCity">
+                            <h2 class="ukrainian-region-name">{{currentCity.city}}</h2>
+                            <p class="ukrainian-region-count">Кількість туристів за рік: {{currentCity.visitors}}</p>
                         </div>
                 </div>
             </div>
@@ -33,13 +33,16 @@ export default {
     },
     data: function () {
         return {
-            
+            currentCity: null
         }
     },
     methods: {
         ...mapActions([
             'getRegionsFromAPI'
         ]),
+        setCity(value) {
+            this.currentCity = value
+      }
     },
     computed: {
         ...mapGetters([

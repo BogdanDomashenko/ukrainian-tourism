@@ -12,6 +12,8 @@
     "axios": "^0.24.0",
     "chart.js": "^3.6.0",
     "core-js": "^3.6.5",
+    "country-list": "^2.2.0",
+    "google-translate-api": "^2.3.0",
     "svgmap": "^2.7.1",
     "vue": "^3.0.0",
     "vue-axios": "^3.4.0",

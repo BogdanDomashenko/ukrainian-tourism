@@ -266,6 +266,8 @@
 </template>
 
 <script>
+import saparateNumber from '../../separate-number.js';
+
 export default {
     name: 'UkraineMap',
     props: {
@@ -273,29 +275,28 @@ export default {
     },
     data() {
         return {
-            cityData: [
-                {name: 'IvanoFrankivsk', count: 100},
-                {name: 'Lviv', count: 1675},
-                {name: 'Volyn', count: 379},
-                {name: 'Transcarpathia', count: 970},
-            ]
+            currentCity: null,
+            currentCityUkr: null
             }
     },
-    mounted() {
+    mounted() { 
         let regions = document.querySelectorAll('.region-link');
         let maxCount = getMaxCount(this.regionsData);
 
         for (let region of regions) {
             let currentRegionData = this.regionsData.find(item => item.name == region.id);
             if (currentRegionData) {
-                region.children[0].style.opacity = ((currentRegionData.visitors+10000) / (maxCount / 50));
+                region.children[0].style.opacity = 1 - ((currentRegionData.visitors+10000) / (maxCount / 30));
             }
             else {
                 region.children[0].style.fill = '#303030';
             }
 
-            region.addEventListener('click', function(e){
-                console.log(this.children[0].id);
+            region.addEventListener('click', e => {
+                this.currentCity = e.target.getAttribute('title');
+                this.currentCity = this.regionsData.find(item => item.name == this.currentCity);
+                this.currentCityUkr = this.currentCity.name_ukr;
+                this.$emit('clicked', {city: this.currentCityUkr, visitors: saparateNumber(this.currentCity.visitors)})
                 e.preventDefault();
             })
         }
@@ -307,12 +308,10 @@ export default {
                     maxItem = item.visitors;
                 }
             }
-            console.log(maxItem);
             return maxItem;
         }
     },
     methods: {
-
     }
 }
 </script>
