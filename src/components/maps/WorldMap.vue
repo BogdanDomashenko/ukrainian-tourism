@@ -13,11 +13,12 @@ export default {
     name: 'WorldMap',
     data() {
         return  {
-            abc: 'dl'
+            
         }
     },
     mounted() {
         new svgMap(this.mapData);
+        console.log(this.mapData);
     },
 }
 </script>

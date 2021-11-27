@@ -1,5 +1,6 @@
 <template>
     <svg class="transport-chart" viewBox="0 0 750 871" fill="none" xmlns="http://www.w3.org/2000/svg">
+
         <g filter="url(#filter0_b_167:234)">
         <path d="M330 341C330 275.278 383.278 222 449 222H631C696.722 222 750 275.278 750 341V565C750 603.66 718.66 635 680 635H400C361.34 635 330 603.66 330 565V341Z" fill="#B4C0FF" fill-opacity="0.45"/>
         </g>
@@ -56,6 +57,8 @@
         </g>
         <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="28" letter-spacing="0em"><tspan x="591.342" y="776.52">&#x412;&#x43e;&#x434;&#x43d;&#x438;&#x439;</tspan></text>
         <text fill="white" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="24" letter-spacing="0em"><tspan x="580.68" y="840.16">{{ round(trensport.water.river/(trensport.water.river + trensport.water.sea)*100) }}%  - &#x440;&#x456;&#x447;&#x43a;&#x43e;&#x432;&#x438;&#x439;&#10;</tspan><tspan x="574.82" y="866.16">{{ round(trensport.water.sea/(trensport.water.river + trensport.water.sea)*100) }}% - &#x43c;&#x43e;&#x440;&#x441;&#x44c;&#x43a;&#x438;&#x439;</tspan></text>
+        <text fill="#00183D" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="48" font-weight="bold" letter-spacing="0em"><tspan x="298.469" y="633.356">{{(trensport.avia.total/1000000).toFixed(0)}}</tspan></text>
+        <text fill="#00183D" xml:space="preserve" style="white-space: pre" font-family="Gilroy" font-size="48" font-weight="bold" letter-spacing="0em"><tspan x="605.469" y="670.356">{{(trensport.water.total/1000000).toFixed(1)}}</tspan></text>
         <defs>
         <filter id="filter0_b_167:234" x="310" y="202" width="460" height="453" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
         <feFlood flood-opacity="0" result="BackgroundImageFix"/>

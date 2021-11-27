@@ -1,5 +1,6 @@
 <template>
-    <section class="foreigners section" id="foreigners">
+    <div v-if="coutries.length>0">
+            <section class="foreigners section" id="foreigners">
         <div class="container">
             <h1 class="h1 wow animate__animated animate__fadeInUp" data-wow-delay="0s">Розподіл іноземних туристів </h1>
             <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">за країнами з яких вони прибули</p>
@@ -7,11 +8,14 @@
             <WorldMap class="wow animate__animated animate__fadeInRight" data-wow-delay="0.4s" style="width: 95%;" :mapData="worldMapData"/>
         </div>
     </section>
+    </div>
 </template>
 
 <script>
 import WorldMap from './maps/WorldMap.vue'
-import { getName } from 'country-list'
+// import { getCode } from 'country-list'
+import {mapGetters} from 'vuex'
+import * as country from '../plugins/countryList';
 
 export default {
     components: {
@@ -19,7 +23,31 @@ export default {
     },
     data () {
         return {
-            worldMapData: {
+
+        }
+    },
+    methods: {
+ 
+    },
+    computed: {
+        ...mapGetters([
+            'coutries'
+        ]),
+        worldMapData: function() {
+            let obj = {}
+
+            for (let item of this.coutries) {
+                if(item.country) {
+                    if(item.external && item.external != "-") {
+                        obj[country.getKeyByName(item.country)] = { gdp: item.external};
+                    }
+                    else if(item.external == "-") {
+                        obj[country.getKeyByName(item.country)] = { gdp: 0};
+                    }
+                }
+            }
+            
+            let resObj = {
                 targetElementID: 'svgWorldMap',
                 colorMax: "#48185F",
                 colorMin: "#C1AAD3",
@@ -34,17 +62,15 @@ export default {
                     },
                     },
                     applyData: 'gdp',
-                    values: {
-                    AF: { gdp: 587},
-                    AL: { gdp: 4583},
-                    DZ: { gdp: 4293},
-                    }
+                    values: obj
                 }
-        }
-        }
+            }
+
+            return(resObj)
+        },
     },
     mounted () {
-        console.log(getName('AF'));
+
     }
 }
 </script>

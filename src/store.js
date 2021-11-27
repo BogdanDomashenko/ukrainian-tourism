@@ -8,13 +8,17 @@ export const store = createStore({
         internalExternalData: [],
         coutriesData: [],
         regionsData: [],
-        transportData: []
+        transportData: [],
+        employmentsData: [],
+        investementsData: [],
     },
     mutations: {
         setInternalExternal: (state, internalExternalData) => state.internalExternalData = internalExternalData,
         setCountriesData: (state, coutriesData) => state.coutriesData = coutriesData,
         setRegionsData: (state, regionsData) => state.regionsData = regionsData,
         setTransportData: (state, transportData) => state.transportData = transportData,
+        setEmploymentsData: (state, employmentsData) => state.employmentsData = employmentsData,
+        setInvestementsData: (state, investementsData) => state.investementsData = investementsData,
     },
     getters: {
         internalExternal (state) {
@@ -28,7 +32,13 @@ export const store = createStore({
         },
         transport (state) {
             return state.transportData;
-        }
+        },
+        employments (state) {
+            return state.employmentsData;
+        },
+        investements (state) {
+            return state.investementsData;
+        },
     },
     actions: {
         getInternalExternalFromAPI(context) {
@@ -62,6 +72,24 @@ export const store = createStore({
             return axios.get(`${server}/transports`)
             .then((response) => {
                 context.commit('setTransportData', response.data)
+            }).catch((error) => {
+                console.log(error);
+                return error;
+            });
+        },
+        getEmploymentsFromAPI(context) {
+            return axios.get(`${server}/employments`)
+            .then((response) => {
+                context.commit('setEmploymentsData', response.data)
+            }).catch((error) => {
+                console.log(error);
+                return error;
+            });
+        },
+        getInvestementsFromAPI(context) {
+            return axios.get(`${server}/investements`)
+            .then((response) => {
+                context.commit('setInvestementsData', response.data)
             }).catch((error) => {
                 console.log(error);
                 return error;

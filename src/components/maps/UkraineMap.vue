@@ -282,11 +282,13 @@ export default {
     mounted() { 
         let regions = document.querySelectorAll('.region-link');
         let maxCount = getMaxCount(this.regionsData);
+        console.log(maxCount);
 
         for (let region of regions) {
             let currentRegionData = this.regionsData.find(item => item.name == region.id);
             if (currentRegionData) {
-                region.children[0].style.opacity = 1 - ((currentRegionData.visitors+10000) / (maxCount / 30));
+                region.children[0].style.filter = `brightness(${(1 - ((currentRegionData.visitors-30000) / (maxCount / 30)))*100}%)`;
+                // region.children[0].style.opacity = 1 - ((currentRegionData.visitors+10000) / (maxCount / 30));
             }
             else {
                 region.children[0].style.fill = '#303030';
