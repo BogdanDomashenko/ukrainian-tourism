@@ -1,16 +1,16 @@
 <template>
     <section class="employment section" id="employment" v-if="employments.length>0">
         <div class="container">
-            <h1 class="h1 wow animate__animated animate__fadeInUp" data-wow-delay="0s">Зайнятість</h1>
+            <h1 class="h1" data-aos="fade-down" data-aos-delay="0">Зайнятість</h1>
             <div class="line line-white line-break"></div>
             <div class="row">
-                <div class="col-md-6 employment-left wow animate__animated animate__fadeInLeft" data-wow-delay="0.2s">
+                <div class="col-md-6 employment-left" data-aos="fade-right" data-aos-delay="200">
                     <div class="block1 employment-block1">
                         <h2 class="h1">{{saparateNumber(employmentsTourism.count)}}</h2>
                         <p class="p">в галузі зайнято обслуговуванням відвідувачів(без роздрібної торгівлі)</p>
                     </div>
                 </div>
-                <div class="col-md-6 employment-right wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
+                <div class="col-md-6 employment-right" data-aos="fade-left" data-aos-delay="400">
                     <div class="row">
                         <div class="block1 employment-block2 block-right">
                             <h3 class="h1">{{((employmentsTourism.count/employmentsTotal.count)*100).toFixed(0)}}%</h3>

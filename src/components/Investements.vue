@@ -1,20 +1,20 @@
 <template>
-    <section class="section investements" id="investements" v-if="investements">
+    <section class="section investements" id="investements" v-if="investements.length>0">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="h1 wow animate__animated animate__fadeInUp" data-wow-delay="0s">Інвестиції</h1>
+                    <h1 class="h1" data-aos="fade-down" data-aos-delay="0">Інвестиції</h1>
                     <div class="line line-white line-break"></div>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="investements-conut wow animate__animated animate__fadeInDown" data-wow-delay="0.2s">
+                            <div class="investements-conut" data-aos="fade-up" data-aos-delay="200">
                                 <span class="investements-conut-data">{{(totalInvestements/1000000).toFixed(0)}} млн. гривень</span>
                             </div>
-                            <InvestementsCharts class="wow animate__animated animate__fadeInLeft" data-wow-delay="0.4s" :investementsChartData="investementsData"/>
+                            <InvestementsCharts data-aos="fade-right" data-aos-delay="400" :investementsChartData="investementsData"/>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
                     <!-- <object data="../assets/images/investements/Saly-32.svg" type="" class="investements-img"></object> -->
                     <img src="../assets/images/investements/Saly-32.png" class="investements-img" alt="">
                 </div>
@@ -43,11 +43,11 @@ export default {
         ]),
         investementsData: function() {
                return{ 
-                    maxCount: 200,
+                    maxCount: this.maxInvestemet,
                     years: [
-                        {year: 2018, data: 100, color: '#E84D4D'},
-                        {year: 2019, data: 100, color: '#06AB8D'},
-                        {year: 2020, data: 200, color: '#6034BE'}
+                        {year: 2018, data: this.getInvestementsByYear(2018), color: '#E84D4D'},
+                        {year: 2019, data: this.getInvestementsByYear(2019), color: '#06AB8D'},
+                        {year: 2020, data: this.getInvestementsByYear(2020), color: '#6034BE'}
                     ] 
                }
         },
@@ -56,6 +56,15 @@ export default {
             this.investements.forEach(item => sum += item.count);
 
             return sum;
+        },
+        maxInvestemet: function() {
+            let max = 0;
+
+            this.investements.forEach(item => {
+                if (item.count > max ) max = item.count;
+            });
+
+            return max;
         }
     },
     methods: {

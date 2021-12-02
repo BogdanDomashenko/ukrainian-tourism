@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import Root from './App.vue'
+
 import VueScrollTo from 'vue-scrollto'
 
 import { store } from './store'

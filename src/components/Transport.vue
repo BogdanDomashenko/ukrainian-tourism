@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h1 class="h1 wow animate__animated animate__fadeInUp" data-wow-delay="0s">Транспорт</h1>
+                <h1 class="h1" data-aos="fade-up" data-aos-delay="200">Транспорт</h1>
                 <div class="line line-white"></div>
-                <p class="wow animate__animated animate__fadeInDown" data-wow-delay="0s">млн. пасажирів у 2020 р.</p>
-                <div class="transport-img wow animate__animated animate__fadeInLeft" data-wow-delay="0.2s">
+                <p data-aos="fade-down" data-aos-delay="200">млн. пасажирів у 2020 р.</p>
+                <div class="transport-img" data-aos="fade-right" data-aos-delay="400">
                     <img src="../assets/images/transport/Saly11.png" alt="man">
                 </div>
             </div>
-            <div class="col-md-7 transport-content wow animate__animated animate__fadeInRight" data-wow-delay="0.4s">
+            <div class="col-md-7 transport-content" data-aos="fade-left" data-aos-delay="600">
                 <TransportChart :transportData="transport"/>
             </div>
         </div>

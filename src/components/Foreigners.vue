@@ -2,10 +2,10 @@
     <div v-if="coutries.length>0">
             <section class="foreigners section" id="foreigners">
         <div class="container">
-            <h1 class="h1 wow animate__animated animate__fadeInUp" data-wow-delay="0s">Розподіл іноземних туристів </h1>
-            <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">за країнами з яких вони прибули</p>
+            <h1 class="h1" data-aos="fade-right" data-aos-delay="200">Розподіл іноземних туристів </h1>
+            <p class="" data-aos="fade-right" data-aos-delay="400">за країнами з яких вони прибули</p>
             <div class="line line-white line-break"></div>
-            <WorldMap class="wow animate__animated animate__fadeInRight" data-wow-delay="0.4s" style="width: 95%;" :mapData="worldMapData"/>
+            <WorldMap class="" data-aos="fade-up" data-aos-delay="600" style="width: 95%;" :mapData="worldMapData"/>
         </div>
     </section>
     </div>
@@ -38,10 +38,10 @@ export default {
 
             for (let item of this.coutries) {
                 if(item.country) {
-                    if(item.external && item.external != "-") {
-                        obj[country.getKeyByName(item.country)] = { gdp: item.external};
+                    if(item.internal && item.internal != "-") {
+                        obj[country.getKeyByName(item.country)] = { gdp: item.internal};
                     }
-                    else if(item.external == "-") {
+                    else if(item.internal == "-") {
                         obj[country.getKeyByName(item.country)] = { gdp: 0};
                     }
                 }
