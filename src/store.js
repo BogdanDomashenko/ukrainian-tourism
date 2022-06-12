@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
 
-let server = 'http://localhost:9999';
+const server = 'https://api-ukrainian-tourism.herokuapp.com';
 
 export const store = createStore({
     state: {

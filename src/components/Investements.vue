@@ -45,9 +45,9 @@ export default {
                return{ 
                     maxCount: this.maxInvestemet,
                     years: [
-                        {year: 2018, data: this.getInvestementsByYear(2018), color: '#E84D4D'},
-                        {year: 2019, data: this.getInvestementsByYear(2019), color: '#06AB8D'},
-                        {year: 2020, data: this.getInvestementsByYear(2020), color: '#6034BE'}
+                        {year: 2019, data: this.getInvestementsByYear(2018), color: '#E84D4D'},
+                        {year: 2020, data: this.getInvestementsByYear(2019), color: '#06AB8D'},
+                        {year: 2021, data: this.getInvestementsByYear(2020), color: '#6034BE'}
                     ] 
                }
         },

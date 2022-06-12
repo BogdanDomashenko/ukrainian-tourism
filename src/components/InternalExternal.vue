@@ -6,7 +6,7 @@
                 <img src="../assets/images/internal_external/Saly14.svg" alt="man">
             </div>
             <div class="col-lg-7 internal-external-content">
-                    <div class="row" data-aos="fade-up" data-aos-delay="400"><h1 class="h1">Туристів обслуговано у 2020</h1></div>
+                    <div class="row" data-aos="fade-up" data-aos-delay="400"><h1 class="h1">Туристів обслуговано у 2021</h1></div>
                     <div class="line line-white line-break"></div>
                     <div class="row">
                         <div class="internal-external-count" data-aos="fade-down" data-aos-delay="400" id="#internal-external-count">

@@ -168,22 +168,19 @@ export default {
             return value.toFixed(0);
         }
     },
+    beforeUpdate() {
+        console.log('avvia', this.avia)
+    },
     mounted() {
-        // this.transport = { 
-        //         automobile: this.transportData[0].count,
-        //         train: this.transportData[1].count,
-        //         avia: this.transportData[3].count,
-        //         water: this.transportData[2].count
-        //     }
-
+        console.log(this.trensport)
     },
     computed: {
         trensport: function() {
             return { 
-                automobile: Math.round(this.transportData[0].count/1000000),
-                train: Math.round(this.transportData[1].count/1000000),
-                avia: this.transportData[3].count,
-                water: this.transportData[2].count
+                automobile: Math.round(this.transportData[1].count/1000000),
+                train: Math.round(this.transportData[2].count/1000000),
+                avia: this.transportData[0].count,
+                water: this.transportData[3].count
             }
         }
     }

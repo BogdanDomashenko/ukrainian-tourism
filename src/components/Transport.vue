@@ -5,7 +5,7 @@
             <div class="col-md-5">
                 <h1 class="h1" data-aos="fade-up" data-aos-delay="200">Транспорт</h1>
                 <div class="line line-white"></div>
-                <p data-aos="fade-down" data-aos-delay="200">млн. пасажирів у 2020 р.</p>
+                <p data-aos="fade-down" data-aos-delay="200">млн. пасажирів у 2021 р.</p>
                 <div class="transport-img" data-aos="fade-right" data-aos-delay="400">
                     <img src="../assets/images/transport/Saly11.png" alt="man">
                 </div>
